@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Card from './components/card';
 
-
 function Wall() {
 
-    // Setting the useState
+    // Setting the useStates
     const [cards, setCards] = useState([]);
     const [load, setLoad] = useState(true);
 
@@ -21,16 +20,19 @@ function Wall() {
         fetchCards();
     }, []);
 
+    // Render
     if (load) {
         return (
             <h3>Loading...</h3>
         )
     } else {
-        console.log(cards);
         return (
             <main>
                 {cards.map((card, index) =>
-                    <Card key={index} url={card.url} desc={card.title} />
+                    <Card key={index}
+                        index={index}
+                        url={card.url}
+                        desc={card.title} />
                 )}
             </main>
         )
