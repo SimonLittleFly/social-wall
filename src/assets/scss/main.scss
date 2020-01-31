@@ -1,0 +1,59 @@
+$backcolor: #000;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  background-color: $backcolor;
+  font-size: 20px;
+
+  font-family: "Martel Sans", Arial, Helvetica, sans-serif;
+}
+
+#content {
+  padding: 0px 25px;
+
+  header {
+    margin: 50px 0px;
+    text-align: center;
+  }
+
+  main {
+    padding: 0px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      padding: 20px;
+      margin: 40px 20px;
+
+      background-color: rgb(69, 134, 131);
+      border: 5px double #d3f6ff;
+      border-radius: 5px;
+
+      .mainImg {
+        position: relative;
+        height: 300px;
+        img {
+          width: 300px;
+        }
+      }
+
+      .desc {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+      }
+    }
+  }
+}
