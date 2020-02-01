@@ -1,24 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap/all';
 
 
 function Card(props) {
 
     // Anim reference
-    const [anim, setAnim] = useState();
     let cardRef = useRef(null);
 
+    //- Init Animation
     useEffect(() => {
-        setAnim(
-            gsap.to(cardRef.current, {
-                duration: 1.2,
-                delay: props.index / 5,
-                autoAlpha: 1,
-                scale: 1,
-                ease: "power4.out"
-            })
-        )
-    }, []);
+        gsap.to(cardRef.current, { duration: 1.2, delay: props.index / 5, autoAlpha: 1, scale: 1, ease: "power4.out" });
+    }, [props.index]);
 
     return (
         <div ref={cardRef} className="card">
