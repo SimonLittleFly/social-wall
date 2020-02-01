@@ -1,2 +1,3 @@
-# social-wall
- A fast and smart social wall
+# Social Wall
+
+A social wall made in ReactJs using Hooks, Sass and Gsap Animations.
